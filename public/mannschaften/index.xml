@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>Handball in Penzlin - it&#39;s coming home on Penzliner SV Handball</title>
-		<link>http://localhost:1313/</link>
-		<description>Recent content in Handball in Penzlin - it&#39;s coming home on Penzliner SV Handball</description>
+		<title>Mannschaftens on Penzliner SV Handball</title>
+		<link>http://localhost:1313/mannschaften/</link>
+		<description>Recent content in Mannschaftens on Penzliner SV Handball</description>
 		<generator>Hugo</generator>
 		<language>de-de</language>
 		
@@ -12,7 +12,7 @@
 		
 			<lastBuildDate>Sat, 01 Aug 2026 12:00:00 +0000</lastBuildDate>
 		
-			<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/mannschaften/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>1. Herren</title>
 				<link>http://localhost:1313/mannschaften/erste-herren/</link>

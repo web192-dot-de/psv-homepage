@@ -1,0 +1,23 @@
+{{ define "main" }}
+<section class="section">
+  <div class="wrap">
+    <h2>Unsere Mannschaften</h2>
+    <p class="lede">Hier findest du alle Teams des PSV im Überblick.</p>
+
+    <!-- Grid-Layout für die Mannschaftskarten -->
+    <div class="teams-grid">
+      {{ range .Pages }}
+        <div class="team-card">
+          <h3>{{ .Title }}</h3>
+          <ul class="team-details">
+            <li><strong>Liga:</strong> {{ .Params.liga }}</li>
+            <li><strong>Trainer:</strong> {{ .Params.trainer }}</li>
+            <li><strong>Training:</strong> {{ .Params.trainingszeiten }}</li>
+          </ul>
+          <a href="{{ .RelPermalink }}" class="btn btn-ghost">Zum Team</a>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
