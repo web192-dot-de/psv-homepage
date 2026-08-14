@@ -1,23 +1,44 @@
 {{ define "main" }}
 <section class="section">
   <div class="wrap">
-    <h2>Unsere Mannschaften</h2>
-    <p class="lede">Hier findest du alle Teams des PSV im Überblick.</p>
+    
+    <h2 style="font-size: 2.5rem; color: var(--color-navy); margin-bottom: 8px;">Unsere Mannschaften</h2>
+    <p class="lede" style="color: #5B6478; font-size: 1.1rem; margin-bottom: 40px;">Hier findest du alle Teams des PSV im Überblick.</p>
 
-    <!-- Grid-Layout für die Mannschaftskarten -->
-    <div class="teams-grid">
-      {{ range .Pages }}
-        <div class="team-card">
-          <h3>{{ .Title }}</h3>
-          <ul class="team-details">
-            <li><strong>Liga:</strong> {{ .Params.liga }}</li>
-            <li><strong>Trainer:</strong> {{ .Params.trainer }}</li>
-            <li><strong>Training:</strong> {{ .Params.trainingszeiten }}</li>
-          </ul>
-          <a href="{{ .RelPermalink }}" class="btn btn-ghost">Zum Team</a>
+    <!-- Bereich für die Liste -->
+    <div class="teams-list">
+      {{ range $index, $element := .RegularPages }}
+        
+        <!-- Wenn es nicht die erste Mannschaft ist, zeigen wir eine klare Trennlinie an -->
+        {{ if $index }}
+          <hr style="border: 0; height: 1px; background: #E1E5F2; margin: 48px 0;">
+        {{ end }}
+
+        <!-- Die Mannschafts-Zeile -->
+        <div class="team-row" style="display: grid; grid-template-columns: 1fr; gap: 24px;">
+          
+          <div class="team-header" style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 16px;">
+            <h3 style="font-family: 'Big Shoulders Display', sans-serif; font-size: 2.2rem; color: var(--color-navy); text-transform: uppercase;">
+              {{ .Title }}
+            </h3>
+            <span style="background: var(--color-gold); color: var(--color-navy); font-weight: 700; padding: 4px 12px; font-size: 0.9rem; text-transform: uppercase;">
+              {{ .Params.liga }}
+            </span>
+          </div>
+
+          <!-- Der strukturierte Info-Kasten wie auf der Detailseite -->
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; background: #fff; border: 1px solid #E1E5F2; padding: 24px;">
+            <div><strong style="color: #5B6478; font-size: 0.85rem; text-transform: uppercase;">Trainer</strong><p style="margin-top: 4px; font-size: 1.05rem;">{{ .Params.trainer }}</p></div>
+            <div><strong style="color: #5B6478; font-size: 0.85rem; text-transform: uppercase;">Trainingszeiten</strong><p style="margin-top: 4px; font-size: 1.05rem;">{{ .Params.trainingszeiten }}</p></div>
+            <div style="display: flex; align-items: center; justify-content: md-end;">
+              <a href="{{ .RelPermalink }}" class="btn btn-primary" style="width: 100%; text-align: center;">Kader & Details ansehen</a>
+            </div>
+          </div>
+
         </div>
       {{ end }}
     </div>
+
   </div>
 </section>
 {{ end }}
