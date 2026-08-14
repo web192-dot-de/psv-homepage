@@ -82,22 +82,23 @@ img{display:block;max-width:100%;}
 
 /* ---------- STORY / BADGE ---------- */
 .story{
-  display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center;
+  /* Die linke Spalte bekommt jetzt exakt die 140px Breite des alten Wappens */
+  display:grid;grid-template-columns:140px 1fr;gap:32px;align-items:center;
   background:#fff;border:1px solid #E1E5F2;padding:40px;
 }
-.badge{
-  width:140px;height:155px;flex-shrink:0;
-  background:var(--color-navy);color:var(--color-gold);
-  clip-path:polygon(50% 0%, 100% 12%, 100% 55%, 50% 100%, 0% 55%, 0% 12%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  border:3px solid var(--color-gold);
+
+.story-logo {
+  width: 100%;        /* Nutzt die 140px Breite der Spalte voll aus */
+  max-height: 155px;  /* Begrenzt die Höhe exakt auf das Maß des alten Wappens */
+  object-fit: contain;/* Verhindert Verzerrung: Das Logo passt sich flexibel an den Rahmen auf */
 }
-.badge .since{font-family:'JetBrains Mono';font-size:0.6rem;letter-spacing:0.08em;color:#C9D2EE;}
-.badge .year{font-family:'Big Shoulders Display';font-size:2.1rem;font-weight:900;}
+
 .story-text p{color:#5B6478;max-width:560px;}
 
 @media (max-width:700px){
   .story{grid-template-columns:1fr;text-align:center;}
+  /* Auf dem Handy zentrieren wir das Logo und geben ihm die Wappen-Maße */
+  .story-logo{width: 140px; height: 155px; margin: 0 auto 16px auto;} 
   .story-text p{margin:0 auto;}
 }
 

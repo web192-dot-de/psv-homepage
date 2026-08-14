@@ -20,16 +20,9 @@
 </section>
 
 <section class="section" id="verein">
-  <a href="/" class="brand">
-    {{ with .Site.Params.logo }}
-      <img src="{{ . | relURL }}" alt="{{ $.Site.Params.logoAlt }}" class="brand-logo" />
-    {{ else }}
-      <div class="brand-logo brand-logo--fallback" aria-hidden="true"></div>
-    {{ end }}
-    <span class="brand-name">{{ .Site.Params.clubName }}</span>
-  </a>
   <div class="wrap story">
     <div class="badge">
+      <img class="story-logo" src="{{ "images/logo.png" | relURL }}" alt="Logo des Vereins {{ .Site.Params.clubName }}" class="story-logo" />
       <span class="since">GEGRÜNDET</span>
       <span class="year">{{ .Site.Params.foundedYear }}</span>
     </div>
