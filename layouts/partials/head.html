@@ -1,0 +1,26 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ .Title }} — {{ .Site.Params.clubNameFull }}</title>
+  <meta name="description" content="Offizielle Homepage des {{ .Site.Params.clubNameFull }}" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+
+  <!--
+    Die Farben kommen zentral aus hugo.toml (params.colorNavy, colorRoyal, ...).
+    Hier werden sie einmalig als CSS-Variablen ausgegeben — Design-Änderungen
+    macht ihr also NUR in hugo.toml, nie im CSS selbst.
+  -->
+  <style>
+    :root {
+      --color-navy:     {{ .Site.Params.colorNavy | default "#0F1E4C" }};
+      --color-royal:    {{ .Site.Params.colorRoyal | default "#1E3FA0" }};
+      --color-gold:     {{ .Site.Params.colorGold | default "#F0B429" }};
+      --color-paper:    {{ .Site.Params.colorPaper | default "#F4F6FB" }};
+      --color-charcoal: {{ .Site.Params.colorCharcoal | default "#12204F" }};
+    }
+  </style>
+</head>

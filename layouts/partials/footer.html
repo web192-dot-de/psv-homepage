@@ -1,0 +1,13 @@
+<footer class="site-footer" id="kontakt">
+  <div class="wrap footer-inner">
+    <div>
+      <h5>{{ .Site.Params.clubNameFull }}</h5>
+      <p>{{ .Site.Params.address }}<br>
+        <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a>
+      </p>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; {{ now.Format "2006" }} {{ .Site.Params.clubNameFull }}</span>
+    </div>
+  </div>
+</footer>

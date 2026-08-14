@@ -1,0 +1,47 @@
+{{ define "main" }}
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Handball seit {{ .Site.Params.foundedYear }} · Penzlin</span>
+    <h1>{{ .Title }}</h1>
+    <p class="lede">{{ .Content }}</p>
+
+    <div class="hero-actions">
+      {{ if .Site.Params.portalUrl }}
+        <a href="{{ .Site.Params.portalUrl }}" class="btn btn-primary" target="_blank" rel="noopener">
+          {{ .Site.Params.portalLabel }}
+        </a>
+      {{ else }}
+        <span class="btn btn-placeholder" aria-disabled="true">Spielplan folgt in Kürze</span>
+      {{ end }}
+      <a href="#kontakt" class="btn btn-ghost">Kontakt</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="verein">
+  <a href="/" class="brand">
+    {{ with .Site.Params.logo }}
+      <img src="{{ . | relURL }}" alt="{{ $.Site.Params.logoAlt }}" class="brand-logo" />
+    {{ else }}
+      <div class="brand-logo brand-logo--fallback" aria-hidden="true"></div>
+    {{ end }}
+    <span class="brand-name">{{ .Site.Params.clubName }}</span>
+  </a>
+  <div class="wrap story">
+    <div class="badge">
+      <span class="since">GEGRÜNDET</span>
+      <span class="year">{{ .Site.Params.foundedYear }}</span>
+    </div>
+    <div class="story-text">
+      <h2>Über den Verein</h2>
+      <p>
+        Der {{ .Site.Params.clubName }} steht seit {{ .Site.Params.foundedYear }} für Zusammenhalt,
+        Teamgeist und Handball auf allen Ebenen – von der Jugend bis zur Herrenmannschaft.
+        Wir freuen uns über jeden, der mitmachen möchte.
+      </p>
+    </div>
+  </div>
+</section>
+
+{{ end }}

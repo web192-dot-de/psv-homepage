@@ -1,0 +1,20 @@
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="/" class="brand">
+      {{ with .Site.Params.logo }}
+        <img src="{{ . | relURL }}" alt="{{ $.Site.Params.logoAlt }}" class="brand-logo" />
+      {{ else }}
+        <div class="brand-logo brand-logo--fallback" aria-hidden="true"></div>
+      {{ end }}
+      <span class="brand-name">{{ .Site.Params.clubName }}</span>
+    </a>
+
+    <nav class="main-nav">
+      {{ range .Site.Menus.main }}
+        <a href="{{ .URL }}">{{ .Name }}</a>
+      {{ end }}
+    </nav>
+
+    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+  </div>
+</header>

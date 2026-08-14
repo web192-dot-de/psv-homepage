@@ -1,0 +1,46 @@
+baseURL = "https://vorschau.penzliner-sv-handball.de/"
+locale = "de-de"
+title = "Penzliner SV Handball"
+
+[params]
+  # --- Vereinsidentität: hier änderst du Name, Farben & Logo zentral ---
+  clubName        = "Penzliner SV"
+  clubNameFull    = "Penzliner SV Handball"
+  foundedYear     = "1991"
+  logo            = "/images/logo.png"      # eigenes Logo hier ablegen (siehe README)
+  logoAlt         = "Wappen Penzliner SV"
+
+  # --- Farben (werden als CSS-Variablen ausgegeben, siehe partials/head.html) ---
+  colorNavy       = "#0118ca"   # Hauptfarbe, blau
+  colorRoyal      = "#ffef01"   # Sekundärfarbe, Gelb
+  colorGold       = "#ffef01"   # Akzentfarbe
+  colorPaper      = "#F4F6FB"   # Heller Hintergrund
+  colorCharcoal   = "#12204F"   # Fließtext-Farbe
+
+  # --- Kontakt (im Footer verwendet) ---
+  address         = "Sporthalle Penzlin · Wilhelm-Scharff-Allee 6 · 17217 Penzlin"
+  email           = "handball@penzliner-sv.de"
+
+  # --- Externes Portal (Spielplan/Ergebnisse) ---
+  # Sobald ihr euch entscheidet, hier die URL eintragen — wird dann automatisch
+  # als Button/Link auf der Startseite angezeigt (siehe layouts/index.html)
+  portalUrl       = ""
+  portalLabel     = "Spielplan & Ergebnisse ansehen"
+
+[menu]
+  [[menu.main]]
+    name   = "Start"
+    url    = "/"
+    weight = 1
+  [[menu.main]]
+    name   = "Verein"
+    url    = "/#verein"
+    weight = 2
+  [[menu.main]]
+    name   = "Training"
+    url    = "/#training"
+    weight = 3
+    [[menu.main]]
+    name   = "Kontakt"
+    url    = "/#kontakt"
+    weight = 4
