@@ -1,7 +1,7 @@
 +++
-title = "1. Damen"
+title = "Damen"
 liga = "Bezirksliga"
-trainingszeiten = "Dienstag & Donnerstag,Uhrzeiten muss ich noch ergänzen"
+trainingszeiten = "Dienstag & Donnerstag, 19:00 - 21:00 Uhr"
 trainer = "Torsten Carlshon"
 +++
 
