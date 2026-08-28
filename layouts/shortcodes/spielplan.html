@@ -1,0 +1,41 @@
+<section class="spielplan-section">
+  <table class="spielplan-table">
+    <thead>
+      <tr>
+        <th>Datum</th>
+        <th>Heimmannschaft</th>
+        <th>Gastmannschaft</th>
+        <th>Uhrzeit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- 1. Holt den Dateinamen der aktuellen .md-Datei (z.B. "maenner") -->
+      {{ $teamName := .Page.File.BaseFileName }}
+      
+      <!-- 2. Baut den Pfad zur passenden CSV-Datei (z.B. "spielplaene/maenner.csv") -->
+      {{ $csvPfad := printf "spielplaene/%s.csv" $teamName }}
+      {{ $file := resources.Get $csvPfad }}
+      
+      {{ with $file }}
+        <!-- 3. CSV parsen -->
+        {{ $spielplan := . | transform.Unmarshal (dict "delimiter" ",") }}
+        
+        <!-- 4. Zeilen ausgeben (Kopfzeile überspringen) -->
+        {{ range after 1 $spielplan }}
+        <tr>
+          <td><strong>{{ index . 0 }}</strong></td>
+          <td>{{ index . 1 }}</td>
+          <td>{{ index . 2 }}</td>
+          <td><span class="zeit">{{ index . 3 }}</span></td>
+        </tr>
+        {{ end }}
+      {{ else }}
+        <tr>
+          <td colspan="4" style="color: red;">
+            Kein Spielplan gefunden unter: <code>assets/{{ $csvPfad }}</code>
+          </td>
+        </tr>
+      {{ end }}
+    </tbody>
+  </table>
+</section>
