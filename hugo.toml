@@ -6,7 +6,7 @@ title = "Penzliner SV Handball"
   # --- Vereinsidentität: hier änderst du Name, Farben & Logo zentral ---
   clubName        = "Penzliner SV"
   clubNameFull    = "Penzliner SV Handball"
-  foundedYear     = "1991"
+  foundedYear     = "1993"
   logo            = "/images/logo.png"      # eigenes Logo hier ablegen (siehe README)
   logoAlt         = "Wappen Penzliner SV"
 
@@ -18,9 +18,11 @@ title = "Penzliner SV Handball"
   colorCharcoal   = "#12204F"   # Fließtext-Farbe
 
   # --- Kontakt (im Footer verwendet) ---
-  address         = "Sporthalle Penzlin · Wilhelm-Scharff-Allee 6 · 17217 Penzlin"
+  address         = "Am See 4a,17217 Penzlin"
   email           = "handball@penzliner-sv.de"
-
+  # --- Adresse Turnalle 
+  # --- Wilhelm-Scharff-Allee 6 · 17217 Penzlin ---
+  
   # --- Externes Portal (Spielplan/Ergebnisse) ---
   # Sobald ihr euch entscheidet, hier die URL eintragen — wird dann automatisch
   # als Button/Link auf der Startseite angezeigt (siehe layouts/index.html)
