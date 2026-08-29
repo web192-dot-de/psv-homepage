@@ -6,7 +6,7 @@ title = "Penzliner SV Handball"
   # --- Vereinsidentität: hier änderst du Name, Farben & Logo zentral ---
   clubName        = "Penzliner SV"
   clubNameFull    = "Penzliner SV Handball"
-  foundedYear     = "1993"
+  foundedYear     = "2012"
   logo            = "/images/logo.png"      # eigenes Logo hier ablegen (siehe README)
   logoAlt         = "Wappen Penzliner SV"
 
@@ -29,6 +29,8 @@ title = "Penzliner SV Handball"
   portalUrl       = ""
   portalLabel     = "Spielplan & Ergebnisse ansehen"
 
+  # --- wenn aktiviert - wird ein Popup gezeigt  
+  wartung = true
 [menu]
   [[menu.main]]
     name   = "Start"
