@@ -1,0 +1,17 @@
+{{ define "main" }}
+<section class="section" style="padding: 60px 0; min-height: 70vh;">
+  <div class="wrap" style="max-width: 800px; margin: 0 auto; padding: 0 20px; box-sizing: border-box; text-align: left;">
+    
+    <!-- Die Überschrift der Seite (Impressum / Datenschutz) -->
+    <h1 style="font-size: 2.5rem; margin-bottom: 30px; border-bottom: 3px solid #ffef01; padding-bottom: 10px;">
+      {{ .Title }}
+    </h1>
+    
+    <!-- Der eigentliche Text aus deiner Markdown-Datei -->
+    <div class="" style="line-height: 1.8; font-size: 1.1rem;">
+      {{ .Content }}
+    </div>
+
+  </div>
+</section>
+{{ end }}
