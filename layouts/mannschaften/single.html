@@ -16,7 +16,7 @@
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin: 32px 0; background: #fff; border: 1px solid #E1E5F2; padding: 24px;">
       {{- with .Resources.GetMatch "team.*" }}
         {{- $scaled := .Resize "500x webp q85" }}
-        <img src="{{ $scaled.RelPermalink }}" alt="Teambild {{ $.Title }}" style="width: 100%; height: auto; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <img src="{{ .RelPermalink }}" alt="Teambild {{ $.Title }}" style="width: 100%; height: auto; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
       {{- else }}
         <div style="color: #999; font-size: 0.9rem; font-style: italic; text-align: center; border: 1px dashed #ccc; padding: 16px; border-radius: 4px;">Kein Bild vorhanden</div>
       {{- end }}
