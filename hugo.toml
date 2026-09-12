@@ -26,7 +26,7 @@ title = "Penzliner SV Handball"
   # --- Externes Portal (Spielplan/Ergebnisse) ---
   # Sobald ihr euch entscheidet, hier die URL eintragen — wird dann automatisch
   # als Button/Link auf der Startseite angezeigt (siehe layouts/index.html)
-  portalUrl       = ""
+  portalUrl       = "https://hhv-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBDE.woa/wa/clubMeetings?club=134138"
   portalLabel     = "Spielplan & Ergebnisse ansehen"
 
   # --- wenn aktiviert - wird ein Popup gezeigt  
