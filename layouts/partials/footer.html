@@ -6,8 +6,12 @@
         <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a>
       </p>
     </div>
-    <div class="footer-bottom">
+    <div class="">
       <span>&copy; {{ now.Format "2006" }} {{ .Site.Params.clubNameFull }}</span>
+      <div>
+        <a href="/impressum/">Impressum</a> | 
+        <a href="/datenschutz/">Datenschutz</a>
+      </div>
     </div>
   </div>
 </footer>
