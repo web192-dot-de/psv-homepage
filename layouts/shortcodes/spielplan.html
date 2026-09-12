@@ -3,8 +3,8 @@
     <thead>
       <tr>
         <th>Datum</th>
-        <th>Heimmannschaft</th>
-        <th>Gastmannschaft</th>
+        <th>Heim</th>
+        <th>Gast</th>
         <th>Uhrzeit</th>
       </tr>
     </thead>
@@ -15,6 +15,8 @@
       <!-- 2. Baut den Pfad zur passenden CSV-Datei (z.B. "spielplaene/maenner.csv") -->
       {{ $csvPfad := printf "spielplaene/%s.csv" $teamName }}
       {{ $file := resources.Get $csvPfad }}
+      <p>{{$csvPfad}}</p>
+      <p>{{$teamName}}</p>
       
       {{ with $file }}
         <!-- 3. CSV parsen -->
