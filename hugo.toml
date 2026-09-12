@@ -40,15 +40,7 @@ title = "Penzliner SV Handball"
 	name = "Mannschaften"
 	url = "/mannschaften/"
 	weight = 2
-  [[menu.main]]
-    name   = "Verein"
-    url    = "/#verein"
-    weight = 3
-  [[menu.main]]
-    name   = "Training"
-    url    = "/#training"
-    weight = 4
-  [[menu.main]]
+[[menu.main]]
     name   = "Kontakt"
     url    = "/#kontakt"
-    weight = 5
+    weight = 3
