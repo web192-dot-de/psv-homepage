@@ -30,7 +30,7 @@ title = "Penzliner SV Handball"
   portalLabel     = "Spielplan & Ergebnisse ansehen"
 
   # --- wenn aktiviert - wird ein Popup gezeigt  
-  wartung = true
+  wartung = false
 [menu]
   [[menu.main]]
     name   = "Start"
