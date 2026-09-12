@@ -10,10 +10,8 @@ Am See 4a
 
 **Vertreten durch den Vorstand (nach § 26 BGB):**
 Torsten Carlshon, 1. Vorsitzender
-[Vorname Nachname, 2. Vorsitzende/r]
 
 **Kontakt:**
-Telefon: [Telefonnummer]
 E-Mail:  handball@penzliner-sv.de
 
 **Vereinsregister:**
