@@ -1,7 +1,7 @@
 +++
 title = "Herren"
 date = 2026-08-01T12:00:00Z
-draft = true
+draft = false
 liga = "Bezirksoberliga Ost Männer"
 trainingszeiten = "Dienstag & Freitag, 19:00 - 21:00 Uhr"
 trainer = "Torsten Carlshon"
