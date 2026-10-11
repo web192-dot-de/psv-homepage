@@ -6,6 +6,7 @@ liga = "Bezirksoberliga Ost Männer"
 trainingszeiten = "Dienstag & Freitag, 19:00 - 21:00 Uhr"
 trainer = "Torsten Carlshon"
 saison = "2026/2027"
+weight = 1
 +++
 
 Hier finden Sie die aktuellen Spielansetzungen unserer Männer:

@@ -5,6 +5,7 @@ draft = false
 liga = "Bezirksoberliga weibliche Jugend D"
 trainingszeiten = "... 19:00 - 21:00 Uhr"
 trainer = "Torsten Carlshon"
+weight = 4
 +++
 
 Hier kannst du einen netten Text über die Mannschaft schreiben, Ziele für die Saison definieren oder aktuelle Infos teilen!

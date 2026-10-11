@@ -5,6 +5,7 @@ draft = false
 liga = "Bezirksoberliga männliche Jugend F"
 trainingszeiten = "... 19:00 - 21:00 Uhr"
 trainer = "Torsten Carlshon"
+weight = 5
 +++
 
 Hier kannst du einen netten Text über die Mannschaft schreiben, Ziele für die Saison definieren oder aktuelle Infos teilen!
