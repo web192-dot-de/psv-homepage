@@ -1,0 +1,3 @@
+- headerfoto einbauen
+- teamfoto, trainer, trainingszeiten pro mannschaft anzeigen
+- spielzeiten pro mannschaft anzeigen
