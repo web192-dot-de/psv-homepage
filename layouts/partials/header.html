@@ -9,12 +9,12 @@
       <span class="brand-name">{{ .Site.Params.clubName }}</span>
     </a>
 
-    <nav class="main-nav">
+    <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
       {{ range .Site.Menus.main }}
         <a href="{{ .URL }}">{{ .Name }}</a>
       {{ end }}
     </nav>
 
-    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+    <button class="nav-toggle" type="button" aria-label="Menü öffnen" aria-controls="main-nav" aria-expanded="false">☰</button>
   </div>
 </header>
