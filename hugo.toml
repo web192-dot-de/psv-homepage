@@ -1,4 +1,4 @@
-baseURL = "https://github.io"
+baseURL = "https://handball-penzlin.de"
 locale = "de-de"
 title = "Penzliner SV Handball"
 
@@ -29,6 +29,9 @@ title = "Penzliner SV Handball"
   portalUrl       = "https://hhv-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBDE.woa/wa/clubMeetings?club=134138"
   portalLabel     = "Spielplan & Ergebnisse ansehen"
 
+
+heroImage    = "/images/hero.jpg"
+heroImageAlt = "Penzliner SV – mehr als ein Verein: Wappen und Burg Penzlin im Sonnenuntergang"
   # --- wenn aktiviert - wird ein Popup gezeigt  
   wartung = false
 [menu]
@@ -41,6 +44,11 @@ title = "Penzliner SV Handball"
 	url = "/mannschaften/"
 	weight = 2
 [[menu.main]]
-    name   = "Kontakt"
+    name   = "Training"
     url    = "/#kontakt"
     weight = 3
+
+[[menu.main]]
+    name   = "Kontakt"
+    url    = "/#kontakt"
+    weight = 4

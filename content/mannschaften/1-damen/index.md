@@ -3,8 +3,8 @@ title = "Damen"
 date = 2026-08-01T12:00:00Z
 draft = false
 liga = "Bezirksliga Ost Frauen"
-trainingszeiten = "Dienstag & Donnerstag, 19:00 - 21:00 Uhr"
-trainer = "Torsten Carlshon"
+trainingszeiten = "Dienstag & Donnerstag, 19:00 - 20:30 Uhr"
+trainer = "Bianca Schultz"
 weight = 2
 +++
 

@@ -1,0 +1,26 @@
+{{/* Eine Mannschafts-Karte. Aufruf: {{ partial "team-card.html" . }} mit einer Mannschaftsseite als Kontext. */}}
+<article class="team-card team-card--overview">
+
+  <div class="team-card-media">
+    {{ with .Resources.GetMatch "team.*" }}
+      {{ $img := .Fill "640x360 webp q80 center" }}
+      <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}"
+           alt="Teambild {{ $.Title }}" loading="lazy">
+    {{ else }}
+      <span class="team-card-media-empty">Teamfoto folgt</span>
+    {{ end }}
+  </div>
+
+  <div class="team-card-body">
+    <h3>{{ .Title }}</h3>
+    {{ with .Params.liga }}<span class="badge-liga">{{ . }}</span>{{ end }}
+
+    <dl class="team-facts">
+      {{ with .Params.trainer }}<div><dt>Trainer</dt><dd>{{ . }}</dd></div>{{ end }}
+      {{ with .Params.trainingszeiten }}<div><dt>Trainingszeiten</dt><dd>{{ . }}</dd></div>{{ end }}
+    </dl>
+
+    <a href="{{ .RelPermalink }}" class="btn btn-primary">Kader &amp; Details ansehen</a>
+  </div>
+
+</article>

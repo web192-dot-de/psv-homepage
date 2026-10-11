@@ -3,8 +3,8 @@ title = "D-Jugend"
 date = 2026-08-01T12:00:00Z
 draft = false
 liga = "Bezirksoberliga weibliche Jugend D"
-trainingszeiten = "... 19:00 - 21:00 Uhr"
-trainer = "Torsten Carlshon"
+trainingszeiten = "Dienstag, 17:00 - 18:30 Uhr · Freitag, 16:00 - 17:30 Uhr"
+trainer = "Christian Matzke"
 weight = 4
 +++
 

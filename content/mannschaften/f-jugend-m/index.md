@@ -3,8 +3,8 @@ title = "F-Jugend"
 date = 2026-08-01T12:00:00Z
 draft = false
 liga = "Bezirksoberliga männliche Jugend F"
-trainingszeiten = "... 19:00 - 21:00 Uhr"
-trainer = "Torsten Carlshon"
+trainingszeiten = "Montag & Donnerstag, 16:30 - 18:00 Uhr"
+trainer = ""
 weight = 5
 +++
 

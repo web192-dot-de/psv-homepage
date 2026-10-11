@@ -3,8 +3,8 @@ title = "B-Jugend"
 date = 2026-08-01T12:00:00Z
 draft = false
 liga = "Bezirksoberliga weibliche Jugend B"
-trainingszeiten = "... 19:00 - 21:00 Uhr"
-trainer = "Torsten Carlshon"
+trainingszeiten = "Mittwoch, 16:30 - 18:00 Uhr · Freitag, 17:30 - 19:00 Uhr"
+trainer = "Florian Soltziem"
 weight = 3
 +++
 

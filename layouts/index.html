@@ -1,15 +1,17 @@
 {{ define "main" }}
-<section class="hero">
-  <div class="wrap">
-    <span class="eyebrow">Handball seit {{ .Site.Params.foundedYear }} · Penzlin</span>
-    <h1>{{ .Title }}</h1>
-    <p class="lede">{{ .Content }}</p>
-
+<section class="hero-banner">
+  {{ with site.Params.heroImage }}{{ if fileExists (printf "static%s" .) }}
+    <img src="{{ . | relURL }}"
+         srcset="{{ replace . ".jpg" "-800.jpg" | relURL }} 800w, {{ . | relURL }} 1672w"
+         sizes="90vw" width="1672" height="941"
+         alt="{{ site.Params.heroImageAlt }}" fetchpriority="high">
+  {{ end }}{{ end }}
+  <div class="wrap hero-banner-inner">
+    <h1 class="sr-only">{{ .Title }}</h1>
+    <div class="lede">{{ .Content }}</div>
     <div class="hero-actions">
       {{ if .Site.Params.portalUrl }}
-        <a href="{{ .Site.Params.portalUrl }}" class="btn btn-primary" target="_blank" rel="noopener">
-          {{ .Site.Params.portalLabel }}
-        </a>
+        <a href="{{ .Site.Params.portalUrl }}" class="btn btn-primary" target="_blank" rel="noopener">{{ .Site.Params.portalLabel }}</a>
       {{ else }}
         <span class="btn btn-placeholder" aria-disabled="true">Spielplan folgt in Kürze</span>
       {{ end }}
@@ -35,8 +37,97 @@
     </div>
   </div>
 </section>
-  <!-- ... hier drüber steht dein ganz normaler Code (Hero, Verein, etc.) ... -->
-  </section>
+
+<section class="section section--teams" id="mannschaften">
+  <div class="wrap">
+    <div class="teaser">
+      <div>
+        <h2 class="section-title">Für jeden etwas dabei</h2>
+        <p class="teaser-text">Von den Minis über die Jugend bis zu Damen und Herren: Bei uns findet jeder seine Mannschaft – ob Anfänger oder Wiedereinsteiger.</p>
+      </div>
+      <a href="{{ "mannschaften/" | relURL }}" class="btn btn-primary">Alle Mannschaften ansehen</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--training" id="training">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="section-title">Training &amp; Anfahrt</h2>
+    </div>
+
+    <div class="training-layout">
+
+      <article class="join-card">
+        <h3>Trainingszeiten</h3>
+        <table class="times-table">
+          <tbody>
+          {{ range (where site.RegularPages "Section" "mannschaften").ByWeight }}
+            {{ $p := . }}
+            {{ with $p.Params.trainingszeiten }}
+            <tr>
+              <th scope="row"><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></th>
+              <td>{{ range split . " · " }}<span>{{ . }}</span>{{ end }}</td>
+            </tr>
+            {{ end }}
+          {{ end }}
+          </tbody>
+        </table>
+      </article>
+
+      <article class="join-card">
+        <h3>Wo findest du uns?</h3>
+        {{ with .Site.Params.hallAddress }}
+          <p class="join-text">{{ with $.Site.Params.hallName }}<strong>{{ . }}</strong><br>{{ end }}{{ . }}</p>
+          {{ with $.Site.Params.hallHinweis }}<p class="join-text hall-hint">{{ . }}</p>{{ end }}
+          <div class="join-actions">
+            <a href="https://www.openstreetmap.org/search?query={{ . | urlquery }}" class="btn btn-ghost-dark" target="_blank" rel="noopener">Auf der Karte öffnen</a>
+            <a href="https://www.google.com/maps/dir/?api=1&destination={{ . | urlquery }}" class="btn btn-ghost-dark" target="_blank" rel="noopener">Route planen</a>
+          </div>
+        {{ else }}
+          <p class="join-text">Die Adresse der Halle folgt in Kürze.</p>
+        {{ end }}
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="section section--join" id="mitmachen">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="section-title">Mitmachen – komm zum Probetraining</h2>
+      <p class="section-sub">Du oder dein Kind habt Lust auf Handball? Einfach vorbeikommen und schnuppern – anmelden musst du dich vorher nicht.</p>
+    </div>
+
+    <div class="join-grid">
+
+      <article class="join-card">
+        <h3>So läuft's ab</h3>
+        <ul class="join-list">
+          <li>Such dir in den Trainingszeiten die passende Mannschaft aus.</li>
+          <li>Komm zur angegebenen Trainingszeit in die Halle.</li>
+          <li>Mitbringen: Sportkleidung, Hallenschuhe, etwas zu trinken.</li>
+          <li>Ausprobieren ist kostenlos und unverbindlich.</li>
+        </ul>
+        <a href="#training" class="btn btn-primary">Trainingszeiten ansehen</a>
+      </article>
+
+      <article class="join-card">
+        <h3>Fragen? Melde dich!</h3>
+        {{ with .Site.Params.contactName }}
+          <p class="join-text"><strong>{{ . }}</strong>{{ with $.Site.Params.contactRole }}<br>{{ . }}{{ end }}</p>
+        {{ end }}
+        <div class="join-actions">
+          {{ with .Site.Params.contactPhone }}<a href="tel:{{ replace (replace . " " "") "/" "" }}" class="btn btn-ghost-dark">Anrufen: {{ . }}</a>{{ end }}
+          {{ with .Site.Params.contactWhatsapp }}<a href="https://wa.me/{{ . }}" class="btn btn-ghost-dark" target="_blank" rel="noopener">WhatsApp schreiben</a>{{ end }}
+          <a href="mailto:{{ .Site.Params.email }}" class="btn btn-ghost-dark">E-Mail schreiben</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
 
 {{ if .Site.Params.wartung }}
   <!-- POPUP OVERLAY (Dunkelt den Hintergrund ab) -->
