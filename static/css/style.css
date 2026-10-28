@@ -229,6 +229,27 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--color-gold);outline
 .hall-hint{color:#5B6478;font-size:.92rem;}
 .join-card .join-actions{margin-top:4px;}
 
+/* ---------- AKTUELLES (News & Spielberichte) ---------- */
+.news-grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));}
+.news-card{background:#fff;border:1px solid #E1E5F2;border-top:4px solid var(--color-gold);display:flex;flex-direction:column;}
+.news-card-media{display:flex;align-items:center;justify-content:center;aspect-ratio:16/9;background:#E1E5F2;overflow:hidden;}
+.news-card-media img{width:100%;height:100%;object-fit:cover;}
+.news-card-media img.news-card-fallback{width:auto;height:70%;object-fit:contain;}
+.news-card-body{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1;}
+.news-card h3{font-family:'Big Shoulders Display',sans-serif;text-transform:uppercase;font-size:1.4rem;font-weight:800;line-height:1.1;color:var(--color-navy);}
+.news-card h3 a:hover{color:var(--color-royal);}
+.news-meta{display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:.75rem;color:#5B6478;}
+.news-excerpt{color:#5B6478;font-size:.95rem;}
+.news-card .more-link{margin-top:auto;align-self:flex-start;}
+.news-result{font-weight:700;color:var(--color-navy);}
+.news-article{max-width:820px;}
+.news-title{font-size:clamp(2rem,5vw,3rem);font-weight:900;color:var(--color-navy);line-height:1.05;margin:10px 0 16px;}
+.news-result--big{font-family:'Big Shoulders Display',sans-serif;font-size:2rem;margin-bottom:16px;}
+.news-cover{width:100%;height:auto;margin:8px 0 24px;border-radius:4px;}
+.back-link--dark{color:var(--color-navy);margin-bottom:16px;}
+.news-article .prose{max-width:68ch;margin-top:0;font-size:1.05rem;line-height:1.8;}
+.news-article .prose a{color:var(--color-royal);text-decoration:underline;}
+
 /* ---------- MITMACHEN ---------- */
 .section--join{background:var(--color-navy);color:#fff;margin-top:24px;}
 .section--join .section-title{color:#fff;}
@@ -252,3 +273,5 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--color-gold);outline
 .site-footer h5{color:#fff;font-family:'Big Shoulders Display';margin-bottom:8px;}
 .site-footer a{color:var(--color-gold);}
 .footer-bottom{align-self:flex-end;font-size:0.85rem;color:#8791B5;}
+
+.footer-social{display:flex;gap:18px;margin-top:10px;}

@@ -5,6 +5,12 @@
       <p>{{ .Site.Params.address }}<br>
         <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a>
       </p>
+      {{ if or .Site.Params.instagram .Site.Params.facebook }}
+      <p class="footer-social">
+        {{ with .Site.Params.instagram }}<a href="{{ . }}" target="_blank" rel="noopener me">Instagram</a>{{ end }}
+        {{ with .Site.Params.facebook }}<a href="{{ . }}" target="_blank" rel="noopener me">Facebook</a>{{ end }}
+      </p>
+      {{ end }}
     </div>
     <div class="">
       <span>&copy; {{ now.Format "2006" }} {{ .Site.Params.clubNameFull }}</span>

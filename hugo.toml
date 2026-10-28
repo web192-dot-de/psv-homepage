@@ -1,6 +1,7 @@
 baseURL = "https://handball-penzlin.de"
 locale = "de-de"
 title = "Penzliner SV Handball"
+enableRobotsTXT = true
 
 [params]
   # --- Vereinsidentität: hier änderst du Name, Farben & Logo zentral ---
@@ -20,6 +21,9 @@ title = "Penzliner SV Handball"
   # --- Kontakt (im Footer verwendet) ---
   address         = "Am See 4a,17217 Penzlin"
   email           = "handball@penzliner-sv.de"
+  hallAddress     = "Wilhelm-Scharff-Allee 6, 17217 Penzlin"
+  contactWhatsapp = "0151-1234567890"
+  contactPhone    = "0151-1234567890"
   # --- Adresse Turnalle 
   # --- Wilhelm-Scharff-Allee 6 · 17217 Penzlin ---
   
@@ -28,6 +32,11 @@ title = "Penzliner SV Handball"
   # als Button/Link auf der Startseite angezeigt (siehe layouts/index.html)
   portalUrl       = "https://hhv-handball.liga.nu/cgi-bin/WebObjects/nuLigaHBDE.woa/wa/clubMeetings?club=134138"
   portalLabel     = "Spielplan & Ergebnisse ansehen"
+
+  description = "Penzliner SV Handball: Mannschaften von den Minis bis zu Damen und Herren, Trainingszeiten, Probetraining und aktuelle Berichte aus Penzlin."
+  ogImage     = "/images/og-image.jpg"
+  instagram   = "https://www.instagram.com/penzliner.sv_handball/"
+  facebook    = ""    # Adresse eintragen, dann erscheint der Link
 
 
 heroImage    = "/images/hero.jpg"
@@ -40,15 +49,19 @@ heroImageAlt = "Penzliner SV – mehr als ein Verein: Wappen und Burg Penzlin im
     url    = "/"
     weight = 1
   [[menu.main]]
+    name   = "Aktuelles"
+    url    = "/#aktuelles"
+    weight = 2
+  [[menu.main]]
 	name = "Mannschaften"
-	url = "/mannschaften/"
-	weight = 2
+	url = "/mannschaften"
+	weight = 3
 [[menu.main]]
     name   = "Training"
     url    = "/#kontakt"
-    weight = 3
+    weight = 4
 
 [[menu.main]]
     name   = "Kontakt"
     url    = "/#kontakt"
-    weight = 4
+    weight = 5

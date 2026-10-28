@@ -1,9 +1,9 @@
 +++
-title = "Minis"
+title = "Minis 3 - 6 Jahre "
 date = 2026-08-01T12:00:00Z
 draft = false
 liga = ""
-trainingszeiten = "Montag 16:00 - 17:30"
+trainingszeiten = "Montag 16:30 - 17:30"
 trainer = "Janine"
 weight = 5
 +++

@@ -1,8 +1,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ .Title }} — {{ .Site.Params.clubNameFull }}</title>
-  <meta name="description" content="Offizielle Homepage des {{ .Site.Params.clubNameFull }}" />
+  {{ partial "seo.html" . }}
 
   <!-- Schriften werden lokal ausgeliefert (static/fonts), keine Verbindung zu Google -->
   <link rel="preload" href="{{ "fonts/inter-latin-400-normal.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>

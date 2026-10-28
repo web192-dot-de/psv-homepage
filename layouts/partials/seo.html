@@ -1,0 +1,83 @@
+{{/* SEO: Titel, Beschreibung, Canonical, Open Graph, Twitter, Icons, JSON-LD */}}
+{{- $club := site.Params.clubNameFull -}}
+{{- $title := cond .IsHome (printf "%s – Handball in Penzlin" $club) (printf "%s – %s" .Title $club) -}}
+{{- $desc := "" -}}
+{{- if .IsHome -}}
+  {{- $desc = site.Params.description -}}
+{{- else if eq .Section "mannschaften" -}}
+  {{- if .IsPage -}}
+    {{- $liga := "" -}}{{- with .Params.liga }}{{ $liga = printf "%s, " . }}{{ end -}}
+    {{- $desc = printf "%s des %s: %s%s" .Title $club $liga (.Params.trainingszeiten | default "Trainingszeiten auf Anfrage") -}}
+  {{- else -}}
+    {{- $desc = printf "Alle Mannschaften des %s im Überblick – von den Minis bis zu Damen und Herren, mit Trainingszeiten." $club -}}
+  {{- end -}}
+{{- else if .Params.kurztext -}}
+  {{- $desc = .Params.kurztext -}}
+{{- else if .Params.description -}}
+  {{- $desc = .Params.description -}}
+{{- else if and .IsPage .Summary -}}
+  {{- $desc = .Summary | plainify | truncate 155 -}}
+{{- end -}}
+{{- if not $desc }}{{ $desc = site.Params.description }}{{ end -}}
+{{- $img := "" -}}
+{{- with .Resources.GetMatch "cover.*" }}{{ $img = (.Fill "1200x630 webp q80 center").Permalink }}
+{{- else }}{{ $img = (site.Params.ogImage | default "/images/og-image.jpg") | absURL }}{{ end -}}
+<title>{{ $title }}</title>
+<meta name="description" content="{{ $desc }}">
+<link rel="canonical" href="{{ .Permalink }}">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="{{ site.Params.colorNavy | default "#0118ca" }}">
+
+<meta property="og:site_name" content="{{ $club }}">
+<meta property="og:locale" content="de_DE">
+<meta property="og:type" content="{{ cond (and .IsPage (eq .Section "aktuelles")) "article" "website" }}">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:image" content="{{ $img }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:description" content="{{ $desc }}">
+<meta name="twitter:image" content="{{ $img }}">
+
+<link rel="icon" href="{{ "favicon.ico" | relURL }}" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon-32.png" | relURL }}">
+<link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}">
+<link rel="manifest" href="{{ "site.webmanifest" | relURL }}">
+{{ with .OutputFormats.Get "rss" }}<link rel="alternate" type="application/rss+xml" title="{{ $club }} – Aktuelles" href="{{ site.Home.Permalink }}aktuelles/index.xml">{{ end }}
+
+{{- if .IsHome }}
+{{- $same := slice -}}
+{{- with site.Params.instagram }}{{ $same = $same | append . }}{{ end -}}
+{{- with site.Params.facebook }}{{ $same = $same | append . }}{{ end }}
+<script type="application/ld+json">
+{{ dict
+  "@context" "https://schema.org"
+  "@type" "SportsClub"
+  "name" $club
+  "sport" "Handball"
+  "url" site.Home.Permalink
+  "logo" (absURL "images/logo.png")
+  "image" $img
+  "description" $desc
+  "email" site.Params.email
+  "foundingDate" site.Params.foundedYear
+  "address" (dict "@type" "PostalAddress" "streetAddress" (index (split (site.Params.hallAddress | default "") ",") 0) "addressLocality" "Penzlin" "postalCode" "17217" "addressCountry" "DE")
+  "sameAs" $same
+  | jsonify (dict "indent" "  ") | safeJS }}
+</script>
+{{- else if and .IsPage (eq .Section "aktuelles") }}
+<script type="application/ld+json">
+{{ dict
+  "@context" "https://schema.org"
+  "@type" "NewsArticle"
+  "headline" .Title
+  "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00")
+  "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")
+  "image" (slice $img)
+  "mainEntityOfPage" .Permalink
+  "author" (dict "@type" "Organization" "name" $club)
+  "publisher" (dict "@type" "Organization" "name" $club "logo" (dict "@type" "ImageObject" "url" (absURL "images/logo.png")))
+  | jsonify (dict "indent" "  ") | safeJS }}
+</script>
+{{- end }}

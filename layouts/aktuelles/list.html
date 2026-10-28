@@ -1,0 +1,16 @@
+{{ define "main" }}
+<section class="section">
+  <div class="wrap">
+    <h2 class="page-title">Aktuelles</h2>
+    <p class="page-intro">Neuigkeiten und Spielberichte vom Penzliner SV.</p>
+
+    <div class="news-grid">
+      {{ range .RegularPages.ByDate.Reverse }}
+        {{ partial "news-card.html" . }}
+      {{ else }}
+        <p>Noch keine Beiträge.</p>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

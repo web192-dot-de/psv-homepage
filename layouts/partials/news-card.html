@@ -1,0 +1,21 @@
+{{/* Eine Beitrags-Karte. Aufruf: {{ partial "news-card.html" . }} mit einer Aktuelles-Seite als Kontext. */}}
+<article class="news-card">
+  <a href="{{ .RelPermalink }}" class="news-card-media" tabindex="-1" aria-hidden="true">
+    {{ with .Resources.GetMatch "cover.*" }}
+      {{ $img := .Fill "640x360 webp q80 center" }}
+      <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="" loading="lazy">
+    {{ else }}
+      <img class="news-card-fallback" src="{{ "images/logo.png" | relURL }}" alt="" width="120" height="120" loading="lazy">
+    {{ end }}
+  </a>
+  <div class="news-card-body">
+    <p class="news-meta">
+      <span class="badge-liga">{{ .Params.kategorie | default "News" }}</span>
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02.01.2006" }}</time>
+    </p>
+    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+    {{ with .Params.ergebnis }}<p class="news-result">{{ . }}</p>{{ end }}
+    <p class="news-excerpt">{{ with .Params.kurztext }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 140 }}{{ end }}</p>
+    <a href="{{ .RelPermalink }}" class="more-link">Weiterlesen →</a>
+  </div>
+</article>

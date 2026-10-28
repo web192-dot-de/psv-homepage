@@ -1,0 +1,24 @@
+{{ define "main" }}
+<article class="section">
+  <div class="wrap news-article">
+    <a href="{{ "aktuelles/" | relURL }}" class="back-link back-link--dark">← Alle Beiträge</a>
+
+    <p class="news-meta">
+      <span class="badge-liga">{{ .Params.kategorie | default "News" }}</span>
+      {{ with .Params.mannschaft }}<span class="news-team">{{ . }}</span>{{ end }}
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02.01.2006" }}</time>
+    </p>
+    <h1 class="news-title">{{ .Title }}</h1>
+    {{ with .Params.ergebnis }}<p class="news-result news-result--big">{{ . }}</p>{{ end }}
+
+    {{ with .Resources.GetMatch "cover.*" }}
+      {{ $img := .Resize "1200x webp q80" }}
+      <img class="news-cover" src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="">
+    {{ end }}
+
+    <div class="prose prose--page">
+      {{ .Content }}
+    </div>
+  </div>
+</article>
+{{ end }}

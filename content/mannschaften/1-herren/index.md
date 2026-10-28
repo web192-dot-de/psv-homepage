@@ -1,5 +1,5 @@
 +++
-title = "Herren"
+title = "Herren  (ab 18 Jahre)"
 date = 2026-08-01T12:00:00Z
 draft = false
 liga = "Bezirksoberliga Ost Männer"

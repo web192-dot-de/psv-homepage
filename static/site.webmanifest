@@ -1,0 +1,11 @@
+{
+  "name": "Penzliner SV Handball",
+  "short_name": "PSV Handball",
+  "icons": [
+    {"src": "/android-chrome-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "/android-chrome-512.png", "sizes": "512x512", "type": "image/png"}
+  ],
+  "theme_color": "#0118ca",
+  "background_color": "#ffffff",
+  "display": "browser"
+}

@@ -1,9 +1,9 @@
 +++
-title = "Damen"
+title = "Damen  (ab 18 Jahre)"
 date = 2026-08-01T12:00:00Z
 draft = false
 liga = "Bezirksliga Ost Frauen"
-trainingszeiten = "Dienstag & Donnerstag, 19:00 - 20:30 Uhr"
+trainingszeiten = "Donnerstag, 19:00 - 20:30 Uhr"
 trainer = "Bianca Schultz"
 weight = 2
 +++
