@@ -2,7 +2,7 @@
 title = "F-Jugend (Jg. 2018–2020)"
 date = 2026-08-01T12:00:00Z
 draft = false
-liga = "Bezirksoberliga männliche Jugend F"
+liga = "F Jugend"
 trainingszeiten = "Montag & Donnerstag, 16:30 - 18:00 Uhr"
 trainer = ""
 weight = 5
